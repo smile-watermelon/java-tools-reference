@@ -54,7 +54,7 @@ jstat -gccapacity 3089
 | 参数          | 说明                                |
 |-------------|-----------------------------------|
 | -gccapacity | 与-gc显示内容大致相同，主要关注堆中各个区域最小，最大使用空间  |
-![img.png](gacapacity.png)
+![img.png](img/gacapacity.png)
 - 结果参数说明
 
 |参数| 说明  |
@@ -77,3 +77,150 @@ jstat -gccapacity 3089
 |CCSC||
 |YGC||
 |FGC||
+
+```shell
+jstat -gcutil 3089
+```
+| 参数      | 说明                              |
+|---------|---------------------------------|
+| -gcutil | 与-gc显示内容大致相同，主要输出已使用空间占总空间的百分比  |
+
+![img.png](img/gcutil.png)
+- 结果参数说明
+
+| 参数   | 说明  |
+|------|-----|
+| S0   |     |
+| S1   ||
+| E    ||
+| O    ||
+| M    ||
+| CCS  ||
+| YGC  ||
+| YGCT ||
+| FGC  ||
+| FGCT ||
+| GCT  ||
+
+```shell
+jstat -gccause 3089 
+```
+| 参数        | 说明                                  |
+|-----------|-------------------------------------|
+| -gccause  | 与-gcutil功能一样，主要输出最后一次或当前正在发生gc产生的原因 |
+![img.png](img/gccause.png)
+
+| 参数   | 说明  |
+|------|-----|
+| S0   ||
+| S1   ||
+| E    ||
+| O    ||
+| M    ||
+| CCS  |
+| YGC  ||
+| YGCT ||
+| FGC  ||
+| FGCT ||
+| GCT  ||
+| LGCC ||
+| GCC  ||
+
+```shell
+jstat -gcnew 3089
+```
+| 参数     | 说明        |
+|--------|-----------|
+| -gcnew | 显示新生代gc情况 |
+![img.png](img/gcnew.png)
+
+| 参数   | 说明   |
+|------|------|
+| S0C  |      |  
+| S1C  ||
+| S0U  ||
+| S1U  ||
+| TT   ||
+| MTT  ||
+| DSS  ||
+| EC   ||
+| EU   ||
+| YGC  ||
+| YGCT || 
+
+- 显示与-gcnew大致相同，主要关注使用到的最大，最小空间
+```shell
+jstat -gcnewcapacity 3089
+```
+![img.png](img/gcnewcapacity.png)
+
+| 参  数  | 说明  |
+|-------|-----|
+| NGCMN ||
+| NGCMX ||
+| NGC   ||
+| S0CMX ||
+| S0C   ||
+| S1CMX ||
+| S1C   ||
+| ECMX  ||
+| EC    ||
+| YGC   ||
+| FGC   ||
+
+- 显示老年代gc情况
+```shell
+jstat -gcold 3089
+```
+![img.png](img/gcold.png)
+
+| 参数     | 说明    |
+|--------|-------|
+| -gcold | 3089  |  
+| MC     ||
+| MU     ||
+| CCSC   ||
+| CCSU   ||
+| OC     ||
+| OU     ||
+| YGC    ||
+| FGC    ||
+| FGCT   ||
+| GCT    ||
+
+- 显示与-gcold大致相同，主要关注使用到的最大，最小空间
+```shell
+jstat -gcoldcapacity 3089 
+```
+![img.png](img/gcoldcapacity.png)
+
+| 参数    | 说明  |
+|-------|-----|
+| OGCMN ||
+| OGCMX ||
+| OGC   ||
+| OC    ||
+| YGC   ||
+| FGC   ||
+| FGCT  ||
+| GCT   ||
+
+- 显示元空间使用到的最大，最小空间
+```shell
+jstat -gcmetacapacity 3089
+```
+![img.png](img/gcmetacapacity.png)
+
+| 参数    | 说明   |
+|-------|------|
+| MCMN  ||       
+| MCMX  ||
+| MC    ||
+| CCSMN ||
+| CCSMX ||
+| CCSC  ||
+| YGC   ||
+| FGC   ||
+| FGCT  ||
+| GCT   ||
+
