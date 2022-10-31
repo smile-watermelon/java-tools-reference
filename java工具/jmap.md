@@ -59,3 +59,12 @@ jmap -histo 3089
    8:           325          16440  [Ljava.lang.String;
 
 ```
+
+- 
+```shell
+jmap -permstat 3089
+```
+
+```shell
+jmap -finalizerinfo
+```
