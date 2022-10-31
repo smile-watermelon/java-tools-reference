@@ -36,3 +36,26 @@ jmap -dump:live,format=b,file=./1.hprof 3089
 ```
 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./1.hprof
 ```
+
+- 输出整个堆信息, 在mac M1 下这个命令可能不支持
+```shell
+jmap -heap 3089
+```
+
+- 输出堆中的统计信息，包括类，实例数量，合计容量
+```shell
+jmap -histo 3089
+```
+```shell
+ num     #instances         #bytes  class name
+----------------------------------------------
+   1:          1440        9196144  [B
+   2:           672        1041952  [I
+   3:          6095         669848  [C
+   4:          4867         116808  java.lang.String
+   5:           697          79432  java.lang.Class
+   6:          1303          58840  [Ljava.lang.Object;
+   7:           621          24840  java.util.LinkedHashMap$Entry
+   8:           325          16440  [Ljava.lang.String;
+
+```
