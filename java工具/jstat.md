@@ -1,4 +1,4 @@
-## jstat (JVM statistics monitoring tool) 见识虚拟机个钟运行状态信息，显示本地或远程类装载，内存，垃圾收集，JIT编译等运行数据
+## jstat (JVM statistics monitoring tool) 显示虚拟机各种运行状态信息，显示本地或远程类装载，内存，垃圾收集，JIT编译等运行数据
 
 ### 基本参数
 - jstat -[option] [-t] [-h<lines>] <vmid> [<interval> [<count>]]
