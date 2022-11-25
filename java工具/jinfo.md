@@ -44,6 +44,11 @@ VM Flags:
 jinfo -flag  CICompilerCount 3089
 ```
 
+- 修改参数
+```shell
+jinfo -flag 参数名 = 参数值
+```
+
 - 查看jvm 启动所有参数初始值
 ```shell
 java -XX+PrintFlagsInitial 
@@ -58,3 +63,4 @@ java -XX+PrintFlagsFinal
 ```shell
 java -XX+PrintCommandLineFlags
 ```
+
